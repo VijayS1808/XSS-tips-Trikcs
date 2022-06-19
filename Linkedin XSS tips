@@ -1,1 +1,30 @@
+### Tip 1:
+XSS Tip🎯🎯
+
+1) Signed up to example[dot]com
+2) Logged out from the site. Then clicked on "Forgot password"--> "Entered email"-->"Sent password reset link to email"
+3) Password rest link= example[dot]com/blahblahblah/resetpassword?id=77863663626
+4) Entered XSS payload : example[dot]com/blahblahblah/resetpassword?id=';alert('XSS');//
+
+💥BOOM XSS💥
+
+### Tip 2:
+Type: Reflected xss
+
+Tips: Always look for width parameter in image url
+
+Note: Image url may be contains third party domain but it could be vulnerable to RXss
+
+
+### Tip 3:
+XSS Tip: 🎯🎯
+
+If your Payload is reflecting between the title tags or noscript tags in the response code, make sure you get out of them as you cannot execute JS up there on the title-bar and also your payload won't execute between the noscript tags.
+
+Use payloads like this would bring you out from title and noscript:
+
+</title><script>alert(1)</script>
+</noscript><script>alert(1)</script>
+
+
 
