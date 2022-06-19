@@ -1,1 +1,26 @@
+### Tip 1: 
+Reflected XSS On private program
 
+1- 
+amass enum -passive -norecursive -noalts -d domain .com -o domain.txt
+
+2-
+cat domian.txt | httpx -o domainhttpx.txt
+
+3-
+cat domainhttpx.txt | nuclei -t /home/orwa/nuclei-templates
+
+
+### Tip: 2 
+Nuclei-templates/generic-detections/top-15-xss.yaml
+ 
+ 
+### Tip 3: 
+XSS Injection - HTML Tags & Attributes
+=> Part 1
+
+Tags: <img>, <a>
+https://twitter.com/therceman/status/1466913634538426368
+
+
+### Tip 4:
